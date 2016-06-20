@@ -12,7 +12,7 @@ public class LaunchTestsScript : MonoBehaviour {
 	void Update () {
 	    if (Input.GetKeyDown(KeyCode.Space))
         {
-            GetComponent<Rigidbody>().AddForce(new Vector3(-0.8f, 0.2f, 0) * 13, ForceMode.Impulse);
+            GetComponent<Rigidbody>().AddForce(new Vector3(-0.8f, 0.2f, 0) * 26, ForceMode.Impulse);
         }
 	}
 }
