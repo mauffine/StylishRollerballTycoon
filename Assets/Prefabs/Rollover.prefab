@@ -72,7 +72,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 141472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cf97edb857857446b30404a8932c343, type: 3}
+  m_Script: {fileID: 11500000, guid: 5198bcf080301414989642cf696a961f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreValue: 100
@@ -100,6 +100,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: ScoreValue
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

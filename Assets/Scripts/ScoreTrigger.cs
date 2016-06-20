@@ -9,6 +9,7 @@ public class ScoreTrigger : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
+		GM = GameObject.Find("Plane").GetComponent<GameManager>();
 		ScoreValue = 100;
 	}
 	
