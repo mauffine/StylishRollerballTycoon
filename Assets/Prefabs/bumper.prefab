@@ -12,7 +12,7 @@ GameObject:
   - 23: {fileID: 2317652}
   - 95: {fileID: 9557630}
   - 135: {fileID: 13592596}
-  - 114: {fileID: 11418178}
+  - 114: {fileID: 11456860}
   m_Layer: 0
   m_Name: bumper
   m_TagString: Untagged
@@ -27,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104412}
   m_LocalRotation: {x: 0, y: 0, z: 0.17364784, w: -0.98480785}
-  m_LocalPosition: {x: -2.813, y: 1.078, z: -0.492}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.977, y: 0.774, z: 0.014}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -82,7 +82,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11418178
+--- !u!114 &11456860
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -90,10 +90,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 104412}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4fa2170787193044a9b525f4b88c82f, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ca867d7d94cd6f41a7d1746e7f89c6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bumperForce: 2
+  m_bumperForce: 5
 --- !u!135 &13592596
 SphereCollider:
   m_ObjectHideFlags: 1
