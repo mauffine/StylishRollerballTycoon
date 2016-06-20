@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
 
     //BallPrefab
     public GameObject BallPrefab;
+    //public GameObject 
 	//BallScript
 
 	// Use this for initialization

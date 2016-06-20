@@ -14,6 +14,6 @@ public class Bumper : MonoBehaviour {
     }
     void OnCollisionEnter(Collision coll)
     {
-       coll.rigidbody.AddForce(Vector3.Normalize(coll.transform.position - transform.position) * m_bumperForce, ForceMode.Impulse);
+        coll.rigidbody.AddForce(Vector3.Normalize(coll.impulse) * m_bumperForce, ForceMode.Impulse);
     }
 }
