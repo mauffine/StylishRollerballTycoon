@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
-
+    public Vector3 resetBallPos;
 	public int ScoreTotal = 0;
 
 	//Make private / hidden towards the end
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
         if (BallsRemaining > 0)
         {
             //resetPos;
-            BallPrefab.transform.position = new Vector3(4.427f, -1.514f, 2.368f);
+            BallPrefab.transform.position = resetBallPos;
             BallPrefab.GetComponent<Rigidbody>().velocity = Vector3.zero;
             BallsRemaining--;
         }
