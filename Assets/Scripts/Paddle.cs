@@ -5,6 +5,7 @@ public class Paddle : MonoBehaviour
 {
     public Vector3 moveRotationInDegree;
     public KeyCode paddleKey;
+    public GameObject Ball;
 
     private bool keepUp;
 
@@ -13,6 +14,8 @@ public class Paddle : MonoBehaviour
 
     private Quaternion originalRotation;
     private Rigidbody rb;
+
+    bool ballColliding;
     // Use this for initialization
     void Start()
     {
@@ -26,6 +29,8 @@ public class Paddle : MonoBehaviour
         if (Input.GetKeyDown(paddleKey))
         {
             keepUp = true;
+            if (ballColliding)
+                Ball.GetComponent<Rigidbody>().AddForce(new Vector3(0.8f, 0.2f, 0) * 50, ForceMode.Impulse);
         }
         if (Input.GetKeyUp(paddleKey))
         {
@@ -37,10 +42,6 @@ public class Paddle : MonoBehaviour
         if (keepUp)
         {
             transform.localRotation = Quaternion.Euler(Vector3.Lerp(transform.localEulerAngles, moveRotationInDegree, Time.deltaTime * 25));
-            //timer += Time.deltaTime;
-            //if (timerFinish > timer)
-            //{
-            //}
         }
         if (!keepUp && transform.localRotation != originalRotation)
         {
@@ -50,7 +51,12 @@ public class Paddle : MonoBehaviour
     }
     void OnCollisionEnter(Collision coll)
     {
-        if (keepUp)
-            coll.rigidbody.AddForce(Vector3.Normalize(coll.impulse) * 10, ForceMode.Impulse);
+        if(coll.collider.CompareTag("Ball"))
+            ballColliding = true;
+    }
+    void OnCollisionExit(Collision coll)
+    {
+        if (coll.collider.CompareTag("Ball"))
+            ballColliding = false;
     }
 }
