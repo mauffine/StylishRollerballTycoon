@@ -5,6 +5,8 @@ public class GameManager : MonoBehaviour {
     public Vector3 resetBallPos;
 	public int ScoreTotal = 0;
 
+    public GameObject score, balls;
+
 	//Make private / hidden towards the end
 	public int BallsRemaining = 6;
 
@@ -25,7 +27,9 @@ public class GameManager : MonoBehaviour {
         //test button
         if (Input.GetKeyDown(KeyCode.W))
             ResetBall();
-	}
+        score.GetComponent<TextMesh>().text = ScoreTotal.ToString();
+        balls.GetComponent<TextMesh>().text = BallsRemaining.ToString();
+    }
 
 	public void UpdateScore(int Score)
 	{
