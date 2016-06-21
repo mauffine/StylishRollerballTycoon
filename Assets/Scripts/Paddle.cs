@@ -7,6 +7,9 @@ public class Paddle : MonoBehaviour
     public KeyCode paddleKey;
     public GameObject Ball;
 
+    public PhysicMaterial bouncy;
+    public PhysicMaterial notBouncy;
+
     private bool keepUp;
 
     private float timerFinish = 0.05f;
@@ -30,11 +33,14 @@ public class Paddle : MonoBehaviour
         {
             keepUp = true;
             if (ballColliding)
-                Ball.GetComponent<Rigidbody>().AddForce(new Vector3(0.8f, 0.2f, 0) * 50, ForceMode.Impulse);
+                Ball.GetComponent<Rigidbody>().AddForce(new Vector3(-0.8f, 0.2f, 0) * 50, ForceMode.Impulse);
+            GetComponent<BoxCollider>().material = bouncy;
         }
         if (Input.GetKeyUp(paddleKey))
         {
             keepUp = false;
+
+            GetComponent<BoxCollider>().material = notBouncy;
         }
     }
     void FixedUpdate()
