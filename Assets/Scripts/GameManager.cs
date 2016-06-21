@@ -4,12 +4,17 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
     public Vector3 resetBallPos;
 	public int ScoreTotal = 0;
+	public int RolloverCount = 0;
+	public float TrumpTime = 0;
+
+	public GameObject[] Rollovers;
 
 	//Make private / hidden towards the end
 	public int BallsRemaining = 6;
 
     //BallPrefab
     public GameObject BallPrefab;
+	public GameObject GodEmperorTrump;
     //public GameObject 
 	//BallScript
 
@@ -25,6 +30,14 @@ public class GameManager : MonoBehaviour {
         //test button
         if (Input.GetKeyDown(KeyCode.W))
             ResetBall();
+
+		//Trump head raise
+		if (RolloverCount == 4)
+		{
+			RolloverCount = 0;
+			TrumpTime = 20.0f;
+		}
+		PraiseOurLordAndSavior();
 	}
 
 	public void UpdateScore(int Score)
@@ -45,4 +58,27 @@ public class GameManager : MonoBehaviour {
             BallsRemaining--;
         }
     }
+	private void PraiseOurLordAndSavior()
+	{
+		if (GodEmperorTrump.transform.position.y <= 0.25 && TrumpTime > 0)
+			GodEmperorTrump.transform.position += new Vector3(0, 1, 0) * Time.deltaTime / 5;
+		else if (GodEmperorTrump.transform.position.y >= -2 && TrumpTime <= 0)
+			GodEmperorTrump.transform.position -= new Vector3(0, 1, 0) * Time.deltaTime / 5;
+		if (TrumpTime > 0)
+			TrumpTime -= Time.deltaTime;
+		else if(TrumpTime <= 0)
+		{
+			ResetRollover();
+		}
+	}
+
+	public void ResetRollover()
+	{
+		for (int i = 0; i < Rollovers.Length; i++)
+		{
+			TrumpTrigger temp = Rollovers[i].GetComponent<TrumpTrigger>();
+
+			temp.isActive = true;
+		}
+	}
 }
