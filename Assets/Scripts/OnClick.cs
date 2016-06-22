@@ -3,9 +3,8 @@ using System.Collections;
 
 public class OnClick : MonoBehaviour {
 
-	private Vector3 GamePos = new Vector3(6.8f, 5.2f, 0);
-	private Vector3 LookPos = new Vector3(0, -1.5f, 0);
-	public Vector3 MenuPos = new Vector3(-2, 0.8f, 0);
+	private Quaternion GamePos = new Quaternion(42, 90, 0, 0);
+	public Quaternion MenuPos = new Quaternion(7, 90, 0, 0);
 	public float CameraSpeed = 1;
 
 	public GameObject PlayButton;
@@ -26,26 +25,24 @@ public class OnClick : MonoBehaviour {
 	{
 		GetInput();
 
-		if (GameMove == true && cam.transform.position != GamePos)
+		if (GameMove == true && cam.transform.rotation != GamePos)
 		{
 			PlayButton.SetActive(false);
 			QuitButton.SetActive(false);
 
-			cam.transform.position = Vector3.LerpUnclamped(cam.transform.position, GamePos, 0.05f);
-			cam.transform.LookAt(LookPos);
-			if(cam.transform.position.x >= 6.799f && cam.transform.position.y >= 5.199f)
-				cam.transform.position = GamePos;
+			cam.transform.rotation = Quaternion.LerpUnclamped(cam.transform.rotation, GamePos, 0.05f);
+			if(cam.transform.rotation.x >= 41.9)
+				cam.transform.rotation = GamePos;
 
 			PauseButton.SetActive(true);
 		}
-		else if(GameMove == false && cam.transform.position != MenuPos)
+		else if(GameMove == false && cam.transform.rotation != MenuPos)
 		{
 			PauseButton.SetActive(false);
 
-			cam.transform.position = Vector3.LerpUnclamped(cam.transform.position, MenuPos, 0.05f);
-			cam.transform.LookAt(LookPos);
-			if (cam.transform.position.y <= -1.51f)
-				cam.transform.position = MenuPos;
+			cam.transform.rotation = Quaternion.LerpUnclamped(cam.transform.rotation, MenuPos, 0.05f);
+			if (cam.transform.rotation.x <= 7.1f)
+				cam.transform.rotation = MenuPos;
 
 			PlayButton.SetActive(true);
 			QuitButton.SetActive(true);

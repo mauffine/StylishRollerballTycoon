@@ -18,15 +18,10 @@ public class TrumpTrigger : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		if (ActiveTime > 0)
-			ActiveTime -= Time.deltaTime;
-		else
-		{
-			for (int i = 0; i < GM.Rollovers.Length; i++)
-			{
-				GM.Rollovers[i].GetComponent<TrumpTrigger>().isActive = false;
-			}
-		}
+        if (ActiveTime > 0)
+            ActiveTime -= Time.deltaTime;
+        else
+            isActive = true;
 	}
 
 	void OnTriggerEnter(Collider coll)
@@ -35,8 +30,6 @@ public class TrumpTrigger : MonoBehaviour
 		{
 			GM.RolloverCount += 1;
 			isActive = false;
-
-			ActiveTime = 40;
 		}
 	}
 }

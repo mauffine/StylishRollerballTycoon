@@ -13,7 +13,7 @@ public class ScoreTrigger : MonoBehaviour {
 	void Start ()
 	{
 		//GM = GameObject.Find("Plane").GetComponent<GameManager>();
-		ScoreValue = 100;
+		//ScoreValue = 100;
 	}
 	
 	// Update is called once per frame

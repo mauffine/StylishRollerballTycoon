@@ -21,6 +21,7 @@ public class Bumper : MonoBehaviour
     {
         if (isBumper)
             GetComponent<AudioSource>().PlayOneShot(m_trumbBumpSounds[Random.Range(0, m_trumbBumpSounds.Length)]);
+
         coll.rigidbody.AddForce(Vector3.Normalize(coll.impulse) * m_bumperForce, ForceMode.Impulse);
         //coll.rigidbody.AddForce(Vector3.Normalize(coll.transform.position - transform.position) * m_bumperForce, ForceMode.Impulse);
     }

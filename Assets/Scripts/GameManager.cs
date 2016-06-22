@@ -64,10 +64,10 @@ public class GameManager : MonoBehaviour {
     }
 	private void PraiseOurLordAndSavior()
 	{
-		if (GodEmperorTrump.transform.position.y <= 0.25 && TrumpTime > 0)
-			GodEmperorTrump.transform.position += new Vector3(0, 1, 0) * Time.deltaTime / 5;
-		else if (GodEmperorTrump.transform.position.y >= -2 && TrumpTime <= 0)
-			GodEmperorTrump.transform.position -= new Vector3(0, 1, 0) * Time.deltaTime / 5;
+		if (GodEmperorTrump.transform.position.y <= 18 && TrumpTime > 0)
+			GodEmperorTrump.transform.position += new Vector3(0, 1, 0) * Time.deltaTime / 3;
+		else if (GodEmperorTrump.transform.position.y >= 14.5f && TrumpTime <= 0)
+			GodEmperorTrump.transform.position -= new Vector3(0, 1, 0) * Time.deltaTime / 3;
 		if (TrumpTime > 0)
 			TrumpTime -= Time.deltaTime;
 		else if(TrumpTime <= 0)
@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour {
 		{
 			TrumpTrigger temp = Rollovers[i].GetComponent<TrumpTrigger>();
 
-			temp.isActive = true;
-		}
+            temp.ActiveTime = 10;
+        }
 	}
 }
