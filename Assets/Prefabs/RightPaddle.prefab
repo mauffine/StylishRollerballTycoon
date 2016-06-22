@@ -42,8 +42,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122412}
   m_LocalRotation: {x: 0.13531604, y: -0.19325101, z: 0.7960301, w: -0.55738646}
-  m_LocalPosition: {x: 6.974, y: -2.617, z: 1.643}
-  m_LocalScale: {x: 3, y: 2.4, z: 2.4}
+  m_LocalPosition: {x: -6.286, y: -0.46, z: 1.643}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_Children:
   - {fileID: 476938}
   m_Father: {fileID: 0}
@@ -55,8 +55,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146090}
   m_LocalRotation: {x: 0.8660255, y: 0.00000016292064, z: 0.00000028218693, w: -0.49999988}
-  m_LocalPosition: {x: 0, y: -0, z: 0}
-  m_LocalScale: {x: 0.8, y: 1.3, z: 6}
+  m_LocalPosition: {x: -0, y: 0.021, z: 0.0368}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 464890}
   m_RootOrder: 0
@@ -70,7 +70,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: e7ce614102eb2a849b68d7a39e6131b9, type: 2}
+  - {fileID: 2100000, guid: 9eda83fce288ce94890eda8152e95af8, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -92,19 +92,19 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146090}
-  m_Mesh: {fileID: 4300000, guid: bafb9f4f202039a40afd2e604766c041, type: 3}
+  m_Mesh: {fileID: 4300000, guid: d2a20588e328e6c48bdc4a893c800c5b, type: 3}
 --- !u!65 &6563066
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146090}
-  m_Material: {fileID: 13400000, guid: 0d8031045da49174eb3ea85e72d7ee0a, type: 2}
+  m_Material: {fileID: 13400000, guid: baa53819bf4c8424e85922936b9e21ee, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.38104737, y: 0.14142266, z: 0.15572968}
-  m_Center: {x: -0.11553313, y: 0.001974874, z: 0.058322668}
+  m_Size: {x: 0.38104737, y: 0.083062634, z: 0.61539435}
+  m_Center: {x: -0.11553959, y: 0.0063399523, z: 0.24725991}
 --- !u!95 &9531116
 Animator:
   serializedVersion: 3
@@ -130,12 +130,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 146090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 669c86e30fcbda64fbeaa1e5d0d34ca3, type: 3}
+  m_Script: {fileID: 11500000, guid: 63ad42ab4c8112a4a8d8f638e2bde169, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveRotationInDegree: {x: 350, y: 180, z: 180}
-  paddleKey: 305
+  moveRotationInDegree: {x: 0, y: 0, z: 0}
+  paddleKey: 0
   Ball: {fileID: 0}
+  bouncy: {fileID: 0}
+  notBouncy: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -16,7 +16,7 @@ public class LaunchTestsScript : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyDown(KeyCode.Space) && isTriggered)
         {
-            GetComponent<Rigidbody>().AddForce(new Vector3(-0.8f, 0.2f, 0) * 35, ForceMode.Impulse);
+            GetComponent<Rigidbody>().AddForce(new Vector3(0.8f, 0.2f, 0) * 35, ForceMode.Impulse);
         }
     }
     void OnTriggerEnter(Collider coll)
