@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour {
         //test button
         if (Input.GetKeyDown(KeyCode.W))
             ResetBall();
-        score.GetComponent<TextMesh>().text = ScoreTotal.ToString();
+        score.GetComponent<TextMesh>().text = "$" + ScoreTotal.ToString();
         balls.GetComponent<TextMesh>().text = BallsRemaining.ToString();
 
 		//Trump head raise

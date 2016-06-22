@@ -4,7 +4,7 @@ using System.Collections;
 public class OnClick : MonoBehaviour {
 
 	private Quaternion GamePos = new Quaternion(42, 90, 0, 0);
-	public Quaternion MenuPos = new Quaternion(7, 90, 0, 0);
+	private Quaternion MenuPos = new Quaternion(7, 90, 0, 0);
 	public float CameraSpeed = 1;
 
 	public GameObject PlayButton;
@@ -25,24 +25,24 @@ public class OnClick : MonoBehaviour {
 	{
 		GetInput();
 
-		if (GameMove == true && cam.transform.rotation != GamePos)
+		if (GameMove == true && cam.transform.localRotation != GamePos)
 		{
 			PlayButton.SetActive(false);
 			QuitButton.SetActive(false);
 
-			cam.transform.rotation = Quaternion.LerpUnclamped(cam.transform.rotation, GamePos, 0.05f);
-			if(cam.transform.rotation.x >= 41.9)
-				cam.transform.rotation = GamePos;
+			cam.transform.localRotation = Quaternion.Lerp(cam.transform.localRotation, GamePos, 0.05f);
+			if(cam.transform.localRotation.x >= 41.9)
+				cam.transform.localRotation = GamePos;
 
 			PauseButton.SetActive(true);
 		}
-		else if(GameMove == false && cam.transform.rotation != MenuPos)
+		else if(GameMove == false && cam.transform.localRotation != MenuPos)
 		{
 			PauseButton.SetActive(false);
 
-			cam.transform.rotation = Quaternion.LerpUnclamped(cam.transform.rotation, MenuPos, 0.05f);
-			if (cam.transform.rotation.x <= 7.1f)
-				cam.transform.rotation = MenuPos;
+			cam.transform.localRotation = Quaternion.Lerp(cam.transform.localRotation, MenuPos, 0.05f);
+			if (cam.transform.localRotation.x <= 7.1f)
+				cam.transform.localRotation = MenuPos;
 
 			PlayButton.SetActive(true);
 			QuitButton.SetActive(true);
