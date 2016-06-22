@@ -376,24 +376,6 @@ MonoBehaviour:
   PauseButton: {fileID: 2055429316}
   GameMove: 0
   cam: {fileID: 839341674}
---- !u!1 &197796135 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 141472, guid: 565c72baca71f904bacac7726009da2d, type: 2}
-  m_PrefabInternal: {fileID: 1029027762}
---- !u!114 &197796136
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 197796135}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 03564bf8a0b3b7745b8f75841d82b7bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Game_Manager: {fileID: 1311613707}
-  isActive: 1
-  ActiveTime: 0
 --- !u!1 &361772310 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 158176, guid: cfea3898e2ed92c44a85ff1e3f6e3262, type: 2}
@@ -950,40 +932,44 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 408724, guid: 565c72baca71f904bacac7726009da2d, type: 2}
+    - target: {fileID: 414562, guid: 643f285a79e3c5b49b25ee7a93ccf202, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.8721807
       objectReference: {fileID: 0}
-    - target: {fileID: 408724, guid: 565c72baca71f904bacac7726009da2d, type: 2}
+    - target: {fileID: 414562, guid: 643f285a79e3c5b49b25ee7a93ccf202, type: 2}
       propertyPath: m_LocalPosition.y
       value: -0.627956
       objectReference: {fileID: 0}
-    - target: {fileID: 408724, guid: 565c72baca71f904bacac7726009da2d, type: 2}
+    - target: {fileID: 414562, guid: 643f285a79e3c5b49b25ee7a93ccf202, type: 2}
       propertyPath: m_LocalPosition.z
       value: 3.4362433
       objectReference: {fileID: 0}
-    - target: {fileID: 408724, guid: 565c72baca71f904bacac7726009da2d, type: 2}
+    - target: {fileID: 414562, guid: 643f285a79e3c5b49b25ee7a93ccf202, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 408724, guid: 565c72baca71f904bacac7726009da2d, type: 2}
+    - target: {fileID: 414562, guid: 643f285a79e3c5b49b25ee7a93ccf202, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 408724, guid: 565c72baca71f904bacac7726009da2d, type: 2}
+    - target: {fileID: 414562, guid: 643f285a79e3c5b49b25ee7a93ccf202, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0.17364784
       objectReference: {fileID: 0}
-    - target: {fileID: 408724, guid: 565c72baca71f904bacac7726009da2d, type: 2}
+    - target: {fileID: 414562, guid: 643f285a79e3c5b49b25ee7a93ccf202, type: 2}
       propertyPath: m_LocalRotation.w
       value: -0.98480785
       objectReference: {fileID: 0}
-    - target: {fileID: 408724, guid: 565c72baca71f904bacac7726009da2d, type: 2}
+    - target: {fileID: 414562, guid: 643f285a79e3c5b49b25ee7a93ccf202, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 11461362, guid: 643f285a79e3c5b49b25ee7a93ccf202, type: 2}
+      propertyPath: Game_Manager
+      value: 
+      objectReference: {fileID: 1311613707}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 565c72baca71f904bacac7726009da2d, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 643f285a79e3c5b49b25ee7a93ccf202, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1064801133 stripped
 GameObject:
@@ -1300,6 +1286,8 @@ MonoBehaviour:
   RolloverCount: 0
   TrumpTime: 0
   Rollovers: []
+  score: {fileID: 0}
+  balls: {fileID: 0}
   BallsRemaining: 6
   BallPrefab: {fileID: 162854, guid: 29202ec69ff34174ab21be716982b5cf, type: 2}
   GodEmperorTrump: {fileID: 1456480032}
@@ -1807,6 +1795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bb235359ca1ff1439174e9bfcd354e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManagerObject: {fileID: 0}
 --- !u!1001 &1846470034
 Prefab:
   m_ObjectHideFlags: 0
